@@ -21,7 +21,7 @@ programa {
       total = PLANO_BASICO + (tempo_utilizado - TEMPO_DO_PLANO_BASICO) * VALOR_DO_TEMPO_ULTRAPASSADO
     }
 
-    escreva("O valor a pagar é: R$ " + total)
+    escreva("O valor a pagar é : R$ " + total)
   }
 }
 
@@ -32,7 +32,7 @@ programa {
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 677; 
+ * @POSICAO-CURSOR = 660; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
