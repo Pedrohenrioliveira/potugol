@@ -3,10 +3,10 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro tipo_de_caixa, i , contador = 0
+		inteiro tipo_de_caixa, i
 		real total = 0.0, preco = 0.0
 		logico tem_produto = falso
-		caracter repetir = 'N', resposta = 'S'
+		caracter repetir = 'n'
 		
 		escreva("CAIXA DE SUPERMERCADO \n")
 
@@ -28,44 +28,58 @@ programa
 						leia(preco)
 
 						total = total + preco
-	
-						escreva("Você ainda tem produto no carrinho? \n")
+
+						escreva("Você ainda tem produto no carrinho?")
 						leia(tem_produto)
-	
+
 						se(tem_produto == falso)
 						{
 							i = 11
 						}
 					}
-					escreva("O TOTAL DA COMPRA É DE: R$" + total + "\n")
+					escreva("O TOTAL DA COMPRA É DE: " + total)
+					//AGORA VERIFIQUE SE USUÁRIO QUER CONTINUAR NO CAIXA RAPIDO
+					//OU SE SE ELE QUER VOLTAR PARA MENU E SOLECIONAR O OUTRO
+					//CAIXA
 					escreva("Deseja trocar de caixa? (s)Sim ou (n)Não")
 					leia(repetir)
 				}
-				enquanto(repetir == 'N' ou repetir == 'n')
+				enquanto(repetir == 's')
 				limpa()
 				inicio()
 				pare
 			}
 			
-			
 			caso 2 :
 			{
-			 
-				escreva("Bem Vindo ao caixa normal \n")
-				enquanto( resposta == 's' ou resposta == 'S')
+				faca
 				{
-					contador++
+						i++
+						escreva("Bem vindo ao caixa \n")
 					
-					escreva("Preço do " + contador + " produto \n")
-					leia(preco)
-	
-					total = total + preco
-	
-					escreva("Deseja adicionar um novo produto ? (s)sim ou (n)não \n")
-					leia(resposta)
+						escreva("Preço do " + i + " produto")
+						leia(preco)
+
+						total = total + preco
+
+						escreva("Você ainda tem produto no carrinho?")
+						leia(tem_produto)						
+					}
+					escreva("O TOTAL DA COMPRA É DE: " + total)
+					escreva("Deseja trocar de caixa? (s)Sim ou (n)Não")
+					leia(repetir)
 				}
-	
-				escreva("O TOTAL DA COMPRA É DE: R$" + total + "\n")pare
+				enquanto(repetir == 's')
+				limpa()
+				inicio()
+				pare
+				
+			}
+			caso contrario:
+			{
+				escreva("Opção invalida")				
+				limpa()
+				inicio()
 			}
 		}
 		
@@ -78,7 +92,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1094; 
+ * @POSICAO-CURSOR = 1686; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
