@@ -4,17 +4,17 @@ programa
     {
         cadeia nome
         inteiro caixa_selecionado, produtos_no_caixa = 0
-        inteiro produtos_pegos, pagamento, valor_recebido
+        inteiro produtos_pegos = 0, pagamento, valor_recebido
         inteiro controle = 0, i = 0
         inteiro quantidade_informada[200]
         cadeia nome_do_produto[200]
         real preco_do_produto[200]
         caracter resposta = 's', continuar = 's'
         real total_da_compra = 0
-        real troco, desconto, total_a_pagar
+        real troco, total_a_pagar
         inteiro cedula100 = 0, cedula50 = 0, cedula20 = 0, cedula10 = 0, cedula5 = 0, cedula2 = 0
         inteiro cedula1 = 0, cedula050 = 0, cedula25 = 0, cedula010 = 0, cedula005 = 0, cedula001 = 0
-        real parcelas, valor_parcela, juros = 0.0199, desconto = 0.05
+        real valor_parcela, juros = 0.0199, desconto = 0.05
         inteiro parcelas
         
         
@@ -207,7 +207,7 @@ programa
                               escreva("R$ 0.01 : " + cedula001 + "X\n" )
                             }                     
                             
-                            escreva(" \nDESEJA CONTINUAR EXECUTANDO O PROGRAMA ? ")
+                            escreva(" \nDESEJA CONTINUAR EXECUTANDO O PROGRAMA? (s)sim ou (n)não ")
                             leia(continuar)
 
                             se(continuar == 's' ou continuar == 'S')
@@ -226,11 +226,11 @@ programa
                             
                             escreva("\nVOCÊ ECONOMIZOU: " + desconto + "\n")
                             
-					                  total_a_pagar = total_da_compra - desconto
+					   total_a_pagar = total_da_compra - desconto
                             
                             escreva("\nTOTAL A PAGAR : " + total_a_pagar + "\n") 
 
-                            escreva(" \nDESEJA CONTINUAR EXECUTANDO O PROGRAMA ? ")
+                            escreva(" \nDESEJA CONTINUAR EXECUTANDO O PROGRAMA? (s)sim ou (n)não ")
                             leia(continuar)
 
                             se(continuar == 's' ou continuar == 'S')
@@ -286,7 +286,7 @@ programa
                                 escreva("NÚMERO DE PARCELAS INVALIDO \n")
                             }
                             
-                            escreva("DESEJA CONTINUAR EXECUTANDO O PROGRAMA? (s/n): ")
+                            escreva("DESEJA CONTINUAR EXECUTANDO O PROGRAMA? (s)sim ou (n)não : ")
                             leia(continuar)
                             
                             se(continuar == 's' ou continuar == 'S')
@@ -486,7 +486,7 @@ programa
                             
                             escreva("\nTOTAL A PAGAR : " + total_a_pagar + "\n") 
 
-                            escreva(" \nDESEJA CONTINUAR EXECUTANDO O PROGRAMA ? ")
+                            escreva(" \nDESEJA CONTINUAR EXECUTANDO O PROGRAMA? (s)sim ou (n)não ")
                             leia(continuar)
 
                             se(continuar == 's' ou continuar == 'S')
