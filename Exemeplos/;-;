@@ -198,10 +198,23 @@ programa
                             se(cedula005 > 0)
                             {
                                 escreva("R$ 0.05 : " + cedula005 + "X\n")
-                            }	                     
+                            }
+                            se(cedula001 > 0)	
+                            {
+                              escreva("R$ 0.01 : " + cedula001 + "X\n" )
+                            }                     
+                            
+                            escreva(" \nDESEJA CONTINUAR EXECUTANDO O PROGRAMA ? ")
+                            leia(continuar)
 
-                            pare 
-                        }
+                            se(continuar == 's' ou continuar == 'S')
+                            {
+                            	limpa()
+                            	inicio()
+                            }
+                           
+                        }pare
+                        
                         caso 2:
                         {                   
                             escreva(" \nVALOR A PAGAR: " + total_da_compra + "\n")
@@ -210,7 +223,7 @@ programa
                             
                             escreva("\nVOCÊ ECONOMIZOU: " + desconto + "\n")
                             
-					   total_a_pagar = total_da_compra - desconto
+					                  total_a_pagar = total_da_compra - desconto
                             
                             escreva("\nTOTAL A PAGAR : " + total_a_pagar + "\n") 
 
@@ -417,7 +430,7 @@ programa
                             
                             escreva("\nVOCÊ ECONOMIZOU: " + desconto + "\n")
                             
-					   total_a_pagar = total_da_compra - desconto
+					                  total_a_pagar = total_da_compra - desconto
                             
                             escreva("\nTOTAL A PAGAR : " + total_a_pagar + "\n") 
 
