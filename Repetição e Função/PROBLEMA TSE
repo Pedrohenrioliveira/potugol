@@ -1,0 +1,57 @@
+programa
+{
+    funcao inicio()
+    {
+        inteiro idade, i
+        logico continuar = verdadeiro
+        caracter repetir
+
+        escreva("BEM VINDO(A) AO TSE \n")
+        escreva("VAMOS INICIAR A VERIFICAÇÃO \n")
+        escreva("\n")
+
+        faca
+        {
+            para (i = 1; i <= 20; i++)
+            {
+                escreva("Digite a idade da " + i + " pessoa : \n ")
+                leia(idade)
+
+                se (idade >= 16)
+                {
+                    escreva(" \nVocê pode tirar o título de eleitor.\n")
+                    escreva("\n")
+                }
+                senao
+                {
+                    escreva("Você não pode tirar o título de eleitor\n")
+                    
+                }
+
+                escreva("Deseja ir para o próximo cliente? (s)sim ou (n)não : \n ")
+                leia(repetir)
+                escreva("\n")
+                
+
+                se (repetir == 'n' ou repetir == 'N')
+                {
+                    continuar = falso
+                    escreva("Atendimento finalizado")
+                    pare
+                }
+
+                se (i == 20)
+                {
+                   	limpa()
+                   	
+                    escreva("Número máximo de entrevistas atingido.\n")
+                    pare
+                }
+            }
+
+        }
+        enquanto(continuar == falso)
+      }
+
+}
+
