@@ -14,6 +14,9 @@ programa
         real troco, desconto, total_a_pagar
         inteiro cedula100 = 0, cedula50 = 0, cedula20 = 0, cedula10 = 0, cedula5 = 0, cedula2 = 0
         inteiro cedula1 = 0, cedula050 = 0, cedula25 = 0, cedula010 = 0, cedula005 = 0, cedula001 = 0
+        real parcelas, valor_parcela, juros = 0.0199, desconto = 0.05
+        inteiro parcelas
+        
         
         escreva("\nCAIXA \n")
         escreva("DIGITE O SEU NOME: ")
@@ -237,12 +240,61 @@ programa
                             }
                             
                         }pare
+                        
                         caso 3:
                         {
-                            // Cartão de crédito
+                            escreva("VALOR A PAGAR: " + total_da_compra + "\n")
+                            escreva("Escolha a quantidade de parcelas (1 a 12): ")
+                            leia(parcelas)
+
+                            se(parcelas == 1)
+                            {                               
+                                total_a_pagar = total_da_compra - (total_da_compra * desconto)
+                                escreva("TOTAL A PAGAR COM DESCONTO: " + total_a_pagar + "\n")
+                                escreva("VALOR DA PARCELA: " + total_a_pagar + "\n")
+                            }
+                            senao se(parcelas <= 4)
+                            {
+                                valor_parcela = total_da_compra / parcelas
+                                escreva("VALOR DE CADA PARCELA: " + valor_parcela + "\n")
+                                escreva("DESEJA CONFIRMAR ESSA OPÇÃO? (s)sim ou (n)não: ")
+                                leia(resposta)
+                                
+                                se(resposta == 's' ou resposta == 'S')
+                                {
+                                    escreva("TOTAL A PAGAR: " + total_da_compra + "\n")
+                                    escreva("VALOR DE CADA PARCELA: " + valor_parcela + "\n")
+                                }
+                                senao
+                                {
+                                    escreva("Escolha outra quantidade de parcelas (1 a 12): ")
+                                    leia(parcelas)
+                                }
+                            }
+                            senao se(parcelas > 4 e parcelas <= 12)
+                            {
+                                valor_parcela = total_da_compra / parcelas
+                                para(i = 1; i <= parcelas; i++)
+                                {
+                                    valor_parcela = (total_da_compra / parcelas) * (1 + (juros * i))
+                                }
+                                escreva("VALOR DE CADA PARCELA COM JUROS: " + valor_parcela + "\n")
+                                escreva("TOTAL A PAGAR: " + (valor_parcela * parcelas) + "\n")
+                            }
+                            senao
+                            {
+                                escreva("NÚMERO DE PARCELAS INVALIDO \n")
+                            }
                             
-                        }
-                        pare
+                            escreva("DESEJA CONTINUAR EXECUTANDO O PROGRAMA? (s/n): ")
+                            leia(continuar)
+                            
+                            se(continuar == 's' ou continuar == 'S')
+                            {
+                                limpa()
+                                inicio()
+                            }
+                        }pare
                     }
                 }
                 senao
@@ -446,8 +498,57 @@ programa
                         }pare
                         caso 3:
                         {
-                            // Cartão de crédito
+                          escreva("VALOR A PAGAR: " + total_da_compra + "\n")
+                          escreva("Escolha a quantidade de parcelas (1 a 12): ")
+                          leia(parcelas)
+
+                          se(parcelas == 1)
+                          {                               
+                              total_a_pagar = total_da_compra - (total_da_compra * desconto)
+                              escreva("TOTAL A PAGAR COM DESCONTO: " + total_a_pagar + "\n")
+                              escreva("VALOR DA PARCELA: " + total_a_pagar + "\n")
+                          }
+                          senao se(parcelas <= 4)
+                          {
+                              valor_parcela = total_da_compra / parcelas
+                              escreva("VALOR DE CADA PARCELA: " + valor_parcela + "\n")
+                              escreva("DESEJA CONFIRMAR ESSA OPÇÃO? (s/n): ")
+                              leia(resposta)
+                                
+                              se(resposta == 's' ou resposta == 'S')
+                              {
+                                 escreva("TOTAL A PAGAR: " + total_da_compra + "\n")
+                                 escreva("VALOR DE CADA PARCELA: " + valor_parcela + "\n")
+                              }
+                              senao
+                                {
+                                  escreva("Escolha outra quantidade de parcelas (1 a 12): ")
+                                  leia(parcelas)
+                                }
+                          }
+                          senao se(parcelas > 4 e parcelas <= 12)
+                          {
+                              valor_parcela = total_da_compra / parcelas
+                              para(i = 1; i <= parcelas; i++)
+                              {
+                                  valor_parcela = (total_da_compra / parcelas) * (1 + (juros * i))
+                              }
+                              escreva("VALOR DE CADA PARCELA COM JUROS: " + valor_parcela + "\n")
+                              escreva("TOTAL A PAGAR: " + (valor_parcela * parcelas) + "\n")
+                          }
+                          senao
+                          {
+                              escreva("NÚMERO DE PARCELAS INVALIDO : \n")
+                          }
                             
+                          escreva("DESEJA CONTINUAR EXECUTANDO O PROGRAMA? (s)sim ou (n)não : ")
+                          leia(continuar)
+                            
+                          se(continuar == 's' ou continuar == 'S')
+                          {
+                              limpa()
+                              inicio()
+                          }                                                  
                         }
                         pare
                 }	
